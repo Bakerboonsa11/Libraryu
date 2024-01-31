@@ -11,8 +11,9 @@
 
     <div class="container">
        <nav>
-          <h2>Library</h2> 
+          
           <ul>
+            <li><h2>Library</h2> </li>
             <li>Books</li>
             <li> <input type="search"></li>
             <li>Join us</li>
@@ -20,12 +21,30 @@
            
           </ul>
        </nav>
+       <form action="#"  method="#" class="pop_up">
+           <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" required placeholder="Name...">
+           </div>
+           <div>
+            <label for="author">Author</label>
+            <input type="text" id="author" required placeholder="Author">
+           </div>
+           <div>
+            <label for="page">  Page</label>
+            <input type="text" id="page" required placeholder="--">
+           </div>
+           <div>
+             <label for="check">read</label>
+             <input type="checkbox" name="" id="check" required checked>
+           </div>
+            
+           <button class="submit" type="submit"> Submit</button>
+        </form>
        <div>
 
        </div>
-       <div>
-
-       </div>
+       <button class="btn_add" type="button"> &plus; ADD Book</button>
     </div>
    <script src="script.js"></script> 
 </body>
