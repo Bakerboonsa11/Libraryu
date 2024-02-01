@@ -4,6 +4,10 @@
     box-sizing: border-box;
    
 }
+/* FC6736 nav */
+/* EFECEC body */
+/* books container 0C2D57 */
+/* FFB0B0 if neded */
 .container{
     width: 90%;
     height: auto;
@@ -23,10 +27,12 @@
 .pop_up{
     box-shadow:  2px 2px 4px 4px rgba(0, 0, 0, 0.5);
     border: 1px solid gray;
-    width: 25%;
+    /* width: 25%; */
+    max-width: 25rem;
     text-align: center;
     margin: 0 auto;
     margin-top: 4rem;
+  
     padding: 2rem;
     border-radius: 10px;
     opacity: 0;
@@ -34,6 +40,7 @@
 }
 .pop_up div{
     margin-top: 3rem;
+    width: 100%;
     
 }
 

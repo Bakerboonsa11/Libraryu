@@ -12,6 +12,7 @@ const add_btn = document.querySelector(".btn_add");
  const view_btn= document.querySelector(".View_btn")
  const container_elements = document.querySelector(".accepter")
  
+ 
         let b_name ;
         let b_author;
         let b_page;
@@ -39,8 +40,11 @@ function evaluator(){
     add_btn.style.opacity = "0";
     pop_up.style.opacity="100%"
     pop_up.style.zIndex = "9999";
+    add_btn.style.zIndex = "-9999";
+    view_btn.style.zIndex = "-9999";
     view_btn.style.opacity="0"  
     container_elements.style.zIndex = "-999";
+  
 }
 
 function book_name_creater(){
@@ -113,6 +117,8 @@ view_btn.addEventListener("click",function(event){
      container_elements.style.zIndex = "9999";
      add_btn.style.opacity="0"
      view_btn.style.opacity="0"
+     add_btn.disabled=true;
+     view_btn.disabled=true;
 
      book_collector.forEach(function(book){
          b_name = book.name;
@@ -144,7 +150,14 @@ view_btn.addEventListener("click",function(event){
    
 });
 
-
+cancel_btn.addEventListener("click",()=>{
+    pop_up.style.opacity="0"
+    pop_up.style.zIndex = "-9999";
+    add_btn.style.opacity = "100%";
+    view_btn.style.opacity="100%" 
+    add_btn.style.zIndex = "9999";
+    view_btn.style.zIndex = "9999";
+})
 add_btn.addEventListener("click",evaluator)
 
 submit_btn.addEventListener("click",function(event){
