@@ -9,11 +9,12 @@
 /* books container 0C2D57 */
 /* FFB0B0 if neded */
 .container{
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     font-size: 1rem;
     position: relative;
     background-color:#EFECEC;
+    margin: 0 auto;
    
 }
 .reset_btn{
