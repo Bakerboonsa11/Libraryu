@@ -30,6 +30,7 @@
     padding: 2rem;
     border-radius: 10px;
     opacity: 0;
+    position: relative;
 }
 .pop_up div{
     margin-top: 3rem;
@@ -55,4 +56,12 @@
     width: 8rem;
     height: 2rem;
     border-radius: 7px;
+    /* opacity: 0; */
+}
+.cancel_btn{
+    position: absolute;
+    top: 1%;
+    left: 90%;
+    width: 20px;
+    border-radius: 5px;
 }
