@@ -24,6 +24,12 @@ const add_btn = document.querySelector(".btn_add");
  const submit_btn = document.querySelector(".submit");
  const view_btn= document.querySelector(".View_btn")
  const container_elements = document.querySelector(".accepter")
+ 
+        let b_name ;
+        let b_author;
+        let b_page;
+        let b_state;
+        let on_off_btn; 
 
 const book_collector = [];
 function book( name,author, page,read){
@@ -46,13 +52,13 @@ view_btn.addEventListener("click",function(event){
      add_btn.style.opacity="0"
      view_btn.style.opacity="0"
      book_collector.forEach(function(book){
-        let b_name = book.name;
-        let b_author= book.author;
-        let b_page=book.page
-        let b_state= book.read;
-        console.log(b_state)
+         b_name = book.name;
+         b_author= book.author;
+         b_page=book.page
+         b_state= book.read;
+        
         let book_index = book_collector.indexOf(book);
-        console.log(book_index)
+        
         const top_element =  document.createElement("div");
         top_element.classList.add("book_container");
         container_elements.appendChild(top_element);
@@ -74,6 +80,8 @@ view_btn.addEventListener("click",function(event){
 
         const button_state= document.createElement("button");
         button_state.classList.add("button_delete");
+        button_state.classList.add("button_statescript");
+
         if(b_state==="on"){
             button_state.classList.add("state_oppen");
              button_state.textContent = "Read";
@@ -84,6 +92,22 @@ view_btn.addEventListener("click",function(event){
         }
         
         top_element.appendChild(button_state);
+        on_off_btn = document.querySelectorAll(".button_statescript");
+        console.log(on_off_btn)
+        for(let i = 0 ;i<on_off_btn.length;i++) {
+            on_off_btn[i].addEventListener("click",function(){
+            if( button_state.textContent === "Not Read"){
+                button_state.classList.add("state_oppen");
+                button_state.classList.remove("state_closed");
+                button_state.textContent ="Read"
+            }
+            else{
+                button_state.classList.add("state_closed");
+                button_state.classList.remove("state_oppen");
+                button_state.textContent = "Not Read";
+            }
+        });
+        }
 
         const button_delete_element= document.createElement("button");
         button_delete_element.classList.add("button_delete");
@@ -91,14 +115,16 @@ view_btn.addEventListener("click",function(event){
         button_delete_element.textContent = "Delete";
         top_element.appendChild(button_delete_element);
 
-       
-
+    
+        
 
 
         
      })
    
 })
+
+
 add_btn.addEventListener("click",evaluator)
 
 submit_btn.addEventListener("click",function(event){
