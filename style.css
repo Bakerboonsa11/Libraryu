@@ -123,4 +123,11 @@
     margin-top: 2rem;
     width: 14rem;
     height: 2rem;
+    border-radius: 8px;
+}
+.state_closed{
+    background-color: red;
+}
+.state_oppen{
+    background-color: green;
 }
