@@ -26,8 +26,6 @@ function book( name,author, page,read){
          this.read=read;
 }
 
-
-
 function evaluator(){
     add_btn.style.opacity = "0";
     pop_up.style.opacity="100%"
@@ -136,9 +134,11 @@ submit_btn.addEventListener("click",function(event){
     let author_value= author_input.value;
     let page_value= page_input.value;
     let checkbtn_value =   check_btn.checked ? "on" : "off"
+
     const newbook= new book(name_value,author_value,page_value,checkbtn_value);
     console.log(newbook)
     book_collector.push(newbook)
+
     add_btn.style.opacity = "100%";
     pop_up.style.opacity="0"
     add_btn.style.zIndex = "9999";
