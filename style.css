@@ -77,12 +77,50 @@
     border-radius: 5px;
 }
 .accepter{
-    background-color: brown;
-    width: 90%;
+    /* background-color: brown; */
+    width: 100%;
+    /* max-width: 90rem; */
+  
     height: 30rem;
     position: absolute;
     top: 5rem;
-    left: 7rem;
+    left: 5rem;
     border-radius: 10px;
     opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 1rem 1rem 1rem 5rem; */
+    flex: 1;
+    overflow: scroll;
+}
+/* style for js class */
+.book_container{
+    border: 3px solid blue;
+    height: 70%;
+    width: 17rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 9px;
+}
+.book_name{
+    font-size: 2rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+.book_author{
+    font-size: 1.2rem;
+   text-align: end;
+   margin: 1rem;
+}
+.book_page{
+    font-size: 1.2rem;
+    text-align: end;
+    margin: 1rem;
+ 
+}
+.button_delete{
+    margin-top: 4rem;
+    width: 14rem;
+    height: 2rem;
 }
