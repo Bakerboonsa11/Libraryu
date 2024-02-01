@@ -97,13 +97,12 @@ view_btn.addEventListener("click",function(event){
      container_elements.style.zIndex = "9999";
      add_btn.style.opacity="0"
      view_btn.style.opacity="0"
+
      book_collector.forEach(function(book){
          b_name = book.name;
          b_author= book.author;
          b_page=book.page
          b_state= book.read;
-        
-        
         
         const top_element =  document.createElement("div");
         top_element.classList.add("book_container");
@@ -112,31 +111,21 @@ view_btn.addEventListener("click",function(event){
         let book_name_element=  book_name_creater()
         top_element.appendChild(book_name_element);
 
-       let book_author_element = author_creator();
+        let book_author_element = author_creator();
         top_element.appendChild(book_author_element);
 
         let book_page_element= page_creator()
         top_element.appendChild(book_page_element);
 
-      
         let button_state= button_state_creator();
         top_element.appendChild(button_state);
         
-    
-
         let delete_btn_element = delete_btn_creator();
-
-      
         top_element.appendChild(delete_btn_element);
-
-    
-        
-
-
         
      })
    
-})
+});
 
 
 add_btn.addEventListener("click",evaluator)
