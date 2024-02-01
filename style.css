@@ -16,6 +16,18 @@
     background-color:#EFECEC;
    
 }
+.reset_btn{
+    position: absolute;
+    top: 5.3rem;
+    left: 94%;
+    z-index: 9999;
+    background-color: transparent;
+    border: none;
+    color: #Fff;
+    opacity: 0;
+    z-index: -9999;
+    /* box-shadow:  2px 2px 4px 1px rgba(0, 0, 0, 0.5); */
+}
 .container nav {
   background-color: #FC6736;
   width: 100%;
@@ -129,7 +141,7 @@
     display: flex;
     flex-wrap: wrap;
     /* padding: 2rem 1px 1rem 1rem; */
-   
+   padding-top: 0.5rem;
     flex: 1;
     overflow: scroll;
     background-color: #FC6736;

@@ -11,8 +11,11 @@ const add_btn = document.querySelector(".btn_add");
  const submit_btn = document.querySelector(".submit");
  const view_btn= document.querySelector(".View_btn")
  const container_elements = document.querySelector(".accepter")
+ const reset_btn = document.querySelector(".reset_btn")
+ const accepter= document.querySelector(".accepter")
  
  
+        let top_element
         let b_name ;
         let b_author;
         let b_page;
@@ -105,17 +108,41 @@ function delete_btn_creator(){
                  
         book_collector.splice(button_delete_element.value, 1);
         let box_to_remove = document.querySelector(`.cont${button_delete_element.value}`);
-        box_to_remove.parentNode.removeChild(box_to_remove);
+        console.log(box_to_remove)
+        box_to_remove.remove()
+        // box_to_remove.parentNode.removeChild(box_to_remove);
             
         })
         counter++
         
         return button_delete_element;
 }
+function reset_page(){
+    add_btn.style.opacity = "0";
+    pop_up.style.opacity="100%"
+    pop_up.style.zIndex = "9999";
+    add_btn.style.zIndex = "-9999";
+    view_btn.style.opacity="0"
+    view_btn.style.zIndex = "-9999";
+    // container_elements.style.opacity="0%"
+    // container_elements.style.zIndex = "-9999";
+    accepter.style.opacity="0"
+    accepter.style.zIndex = "-9999";
+    add_btn.disabled=true;
+     view_btn.disabled=true;
+    while(top_element.firstChild){
+        top_element.removeChild(top_element.firstChild);
+        console.log(`the top element is ${top_element}`)
+        container_elements.removeChild(container_elements.firstChild)
+    }
+     
+}
 view_btn.addEventListener("click",function(event){
      container_elements.style.opacity="100%"
      container_elements.style.zIndex = "9999";
      add_btn.style.opacity="0"
+     reset_btn.style.opacity="100%"
+     reset_btn.style.zIndex="9999"
      view_btn.style.opacity="0"
      add_btn.disabled=true;
      view_btn.disabled=true;
@@ -126,7 +153,7 @@ view_btn.addEventListener("click",function(event){
          b_page=book.page
          b_state= book.read;
         
-        const top_element =  document.createElement("div");
+        top_element =  document.createElement("div");
         top_element.classList.add("book_container");
         top_element.classList.add(`cont${counter}`)
         container_elements.appendChild(top_element);
@@ -145,10 +172,11 @@ view_btn.addEventListener("click",function(event){
         
         let delete_btn_element = delete_btn_creator();
         top_element.appendChild(delete_btn_element);
-        
+        console.log(top_element)
      })
    
 });
+
 
 cancel_btn.addEventListener("click",()=>{
     pop_up.style.opacity="0"
@@ -157,7 +185,10 @@ cancel_btn.addEventListener("click",()=>{
     view_btn.style.opacity="100%" 
     add_btn.style.zIndex = "9999";
     view_btn.style.zIndex = "9999";
+    add_btn.disabled=false;
+    view_btn.disabled=false;
 })
+reset_btn.addEventListener("click",reset_page);
 add_btn.addEventListener("click",evaluator)
 
 submit_btn.addEventListener("click",function(event){
@@ -169,5 +200,7 @@ submit_btn.addEventListener("click",function(event){
     add_btn.style.zIndex = "9999";
     view_btn.style.opacity="100%"
     view_btn.style.zIndex = "9999";
+    add_btn.disabled=false;
+    view_btn.disabled=false;
 
 })
