@@ -17,6 +17,7 @@ const add_btn = document.querySelector(".btn_add");
         let b_page;
         let b_state;
         let on_off_btn; 
+        let counter =0;
 
 const book_collector = [];
 function book( name,author, page,read){
@@ -25,7 +26,15 @@ function book( name,author, page,read){
          this.page=page;
          this.read=read;
 }
-
+function object_creator(){
+    let name_value = name_input.value;
+    let author_value= author_input.value;
+    let page_value= page_input.value;
+    let checkbtn_value =   check_btn.checked ? "on" : "off"
+    const newbook= new book(name_value,author_value,page_value,checkbtn_value);
+    console.log(newbook)
+    book_collector.push(newbook)
+}
 function evaluator(){
     add_btn.style.opacity = "0";
     pop_up.style.opacity="100%"
@@ -83,11 +92,20 @@ function button_state_creator(){
         return button_state;
 }
 function delete_btn_creator(){
-        let book_index = book_collector.indexOf(book);
+        
         const button_delete_element= document.createElement("button");
         button_delete_element.classList.add("button_delete");
-        button_delete_element.setAttribute("value", book_index);
+        button_delete_element.setAttribute("value", counter);
         button_delete_element.textContent = "Delete";
+        button_delete_element.addEventListener("click", function(){
+                 
+        book_collector.splice(button_delete_element.value, 1);
+        let box_to_remove = document.querySelector(`.cont${button_delete_element.value}`);
+        box_to_remove.parentNode.removeChild(box_to_remove);
+            
+        })
+        counter++
+        
         return button_delete_element;
 }
 view_btn.addEventListener("click",function(event){
@@ -104,6 +122,7 @@ view_btn.addEventListener("click",function(event){
         
         const top_element =  document.createElement("div");
         top_element.classList.add("book_container");
+        top_element.classList.add(`cont${counter}`)
         container_elements.appendChild(top_element);
     
         let book_name_element=  book_name_creater()
@@ -130,15 +149,8 @@ add_btn.addEventListener("click",evaluator)
 
 submit_btn.addEventListener("click",function(event){
     event.preventDefault()
-    let name_value = name_input.value;
-    let author_value= author_input.value;
-    let page_value= page_input.value;
-    let checkbtn_value =   check_btn.checked ? "on" : "off"
-
-    const newbook= new book(name_value,author_value,page_value,checkbtn_value);
-    console.log(newbook)
-    book_collector.push(newbook)
-
+    
+    object_creator();
     add_btn.style.opacity = "100%";
     pop_up.style.opacity="0"
     add_btn.style.zIndex = "9999";
