@@ -7,6 +7,8 @@ const add_btn = document.querySelector(".btn_add");
  const cancel_btn = document.querySelector(".cancel_btn");
  const check_btn = document.querySelector("#check");
  const submit_btn = document.querySelector(".submit");
+ const view_btn= document.querySelector(".View_btn")
+ const container_elements = document.querySelector(".accepter")
 
 const book_collector = [];
 function book( name,author, page,read){
@@ -19,9 +21,17 @@ function book( name,author, page,read){
 function evaluator(){
     add_btn.style.opacity = "0";
     pop_up.style.opacity="100%"
-     
+    pop_up.style.zIndex = "9999";
+    view_btn.style.opacity="0"  
+    container_elements.style.zIndex = "-999";
 }
-
+view_btn.addEventListener("click",function(event){
+     container_elements.style.opacity="100%"
+     container_elements.style.zIndex = "9999";
+     add_btn.style.opacity="0"
+     view_btn.style.opacity="0"
+     
+})
 add_btn.addEventListener("click",evaluator)
 
 submit_btn.addEventListener("click",function(event){
@@ -34,6 +44,11 @@ submit_btn.addEventListener("click",function(event){
     book_collector.push(newbook)
     add_btn.style.opacity = "100%";
     pop_up.style.opacity="0"
+    add_btn.style.zIndex = "9999";
+    view_btn.style.opacity="100%"
+    view_btn.style.zIndex = "9999";
+
+
+    
    
-    console.log(book_collector)
 })

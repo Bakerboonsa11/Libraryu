@@ -58,10 +58,31 @@
     border-radius: 7px;
     /* opacity: 0; */
 }
+.View_btn{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+    width: 8rem;
+    height: 2rem;
+    border-radius: 7px;
+   
+    /* opacity: 0; */ 
+}
 .cancel_btn{
     position: absolute;
     top: 1%;
     left: 90%;
     width: 20px;
     border-radius: 5px;
+}
+.accepter{
+    background-color: brown;
+    width: 90%;
+    height: 30rem;
+    position: absolute;
+    top: 5rem;
+    left: 7rem;
+    border-radius: 10px;
+    opacity: 0;
 }
