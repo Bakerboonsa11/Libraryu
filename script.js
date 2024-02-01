@@ -34,6 +34,6 @@ submit_btn.addEventListener("click",function(event){
     book_collector.push(newbook)
     add_btn.style.opacity = "100%";
     pop_up.style.opacity="0"
-    
+   
     console.log(book_collector)
 })
