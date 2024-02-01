@@ -50,6 +50,7 @@ view_btn.addEventListener("click",function(event){
         let b_author= book.author;
         let b_page=book.page
         let b_state= book.read;
+        console.log(b_state)
         let book_index = book_collector.indexOf(book);
         console.log(book_index)
         const top_element =  document.createElement("div");
@@ -71,11 +72,26 @@ view_btn.addEventListener("click",function(event){
         book_page_element.textContent =`Page : ${b_page}` ;
         top_element.appendChild(book_page_element);
 
+        const button_state= document.createElement("button");
+        button_state.classList.add("button_delete");
+        if(b_state==="on"){
+            button_state.classList.add("state_oppen");
+             button_state.textContent = "Read";
+        }
+        else{
+            button_state.classList.add("state_closed");
+            button_state.textContent = "Not Read";
+        }
+        
+        top_element.appendChild(button_state);
+
         const button_delete_element= document.createElement("button");
         button_delete_element.classList.add("button_delete");
         button_delete_element.setAttribute("value", book_index);
         button_delete_element.textContent = "Delete";
         top_element.appendChild(button_delete_element);
+
+       
 
 
 
@@ -90,8 +106,9 @@ submit_btn.addEventListener("click",function(event){
     let name_value = name_input.value;
     let author_value= author_input.value;
     let page_value= page_input.value;
-    let checkbtn_value = check_btn.value;
+    let checkbtn_value =   check_btn.checked ? "on" : "off"
     const newbook= new book(name_value,author_value,page_value,checkbtn_value);
+    console.log(newbook)
     book_collector.push(newbook)
     add_btn.style.opacity = "100%";
     pop_up.style.opacity="0"
