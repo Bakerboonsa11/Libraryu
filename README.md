@@ -27,7 +27,7 @@ This is a library project developed using HTML, JavaScript, and CSS. It allows u
 3. Add new books, search for books, delete and change status  as needed.
 
 ## Contributors
----- allowed
+---- 
 
 
 
