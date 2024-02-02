@@ -74,6 +74,21 @@
   height: 2rem;
   text-align: center;
 }
+input[type="search"]{
+    background-color: #FFF;
+    text-align: center;
+    color: #FC6736;
+    font-weight: 900;
+    border: 1px solid #fff;
+    border-radius: 7px;
+}
+input[type="search"]:focus{
+   outline: none;
+   background-color: #EFECEC;
+   color: #000;
+   box-shadow:  2px 2px 4px 3px rgba(0, 0, 0, 0.5);
+   
+}
 .unique{
     display: flex;
     align-items: center;
