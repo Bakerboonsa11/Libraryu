@@ -193,14 +193,21 @@ add_btn.addEventListener("click",evaluator)
 
 submit_btn.addEventListener("click",function(event){
     event.preventDefault()
-    
-    object_creator();
-    add_btn.style.opacity = "100%";
-    pop_up.style.opacity="0"
-    add_btn.style.zIndex = "9999";
-    view_btn.style.opacity="100%"
-    view_btn.style.zIndex = "9999";
-    add_btn.disabled=false;
-    view_btn.disabled=false;
+
+    if (pop_up.checkValidity()) {
+        object_creator();
+        add_btn.style.opacity = "100%";
+        pop_up.style.opacity="0"
+        add_btn.style.zIndex = "9999";
+        view_btn.style.opacity="100%"
+        view_btn.style.zIndex = "9999";
+        add_btn.disabled=false;
+        view_btn.disabled=false;
+        
+      } else {
+        pop_up.reportValidity();
+      }
+   
+   
 
 })
