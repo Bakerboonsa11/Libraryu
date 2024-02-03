@@ -124,6 +124,17 @@ input[type="search"]:focus{
     font-weight: 900;
     /* opacity: 0; */
 }
+.btn_add_unique:hover{
+  
+    background-color: #FFF;
+    color: #FC6736;
+  
+    /* opacity: 0; */
+}
+.View_btn:hover{
+    background-color: #FFF;
+    color: #FC6736;
+}
 .View_btn{
     position: absolute;
     top: 50%;
