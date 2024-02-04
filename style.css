@@ -109,7 +109,15 @@ input[type="search"]:focus{
     margin-left: 1.5rem;
     background-color: #FC6736;
     height: 2rem;
+    color: #Fff;
+    font-weight: 900;
     
+}
+.submit:hover{
+   
+    background-color: #Fff;
+    color: #FC6736;
+  
 }
 .btn_add{
     position: absolute;
@@ -224,4 +232,15 @@ input[type="search"]:focus{
     background-color: rgb(16, 94, 16);
     color: #fff;
     font-weight: 900;
+}
+.button_delete:hover{
+  background-color: transparent;
+  color: #FFF;
+}
+.button_delete_unique{
+    background-color:#EFECEC;
+}
+.button_delete_unique:hover{
+    background-color:transparent;
+    color: #EFECEC;
 }

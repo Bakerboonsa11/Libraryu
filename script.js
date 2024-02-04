@@ -102,6 +102,7 @@ function delete_btn_creator(){
         
         const button_delete_element= document.createElement("button");
         button_delete_element.classList.add("button_delete");
+        button_delete_element.classList.add("button_delete_unique");
         button_delete_element.setAttribute("value", counter);
         button_delete_element.textContent = "Delete";
         button_delete_element.addEventListener("click", function(){
