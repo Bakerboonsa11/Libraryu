@@ -1,4 +1,28 @@
+class libarary {
+  constructor(){
+    
+  }
+  static evaluator(){
+    add_btn.style.opacity = "0";
+    pop_up.style.opacity="100%"
+    pop_up.style.zIndex = "9999";
+    add_btn.style.zIndex = "-9999";
+    view_btn.style.zIndex = "-9999";
+    view_btn.style.opacity="0"  
+    container_elements.style.zIndex = "-999";
+  
+}
+ static object_creator(){
+    let name_value = name_input.value;
+    let author_value= author_input.value;
+    let page_value= page_input.value;
+    let checkbtn_value =   check_btn.checked ? "on" : "off"
+    const newbook= new book(name_value,author_value,page_value,checkbtn_value);
+    console.log(newbook)
+    book_collector.push(newbook)
+}
 
+}
 
 "use strict"
 const add_btn = document.querySelector(".btn_add");
@@ -39,16 +63,16 @@ function object_creator(){
     console.log(newbook)
     book_collector.push(newbook)
 }
-function evaluator(){
-    add_btn.style.opacity = "0";
-    pop_up.style.opacity="100%"
-    pop_up.style.zIndex = "9999";
-    add_btn.style.zIndex = "-9999";
-    view_btn.style.zIndex = "-9999";
-    view_btn.style.opacity="0"  
-    container_elements.style.zIndex = "-999";
+// function evaluator(){
+//     add_btn.style.opacity = "0";
+//     pop_up.style.opacity="100%"
+//     pop_up.style.zIndex = "9999";
+//     add_btn.style.zIndex = "-9999";
+//     view_btn.style.zIndex = "-9999";
+//     view_btn.style.opacity="0"  
+//     container_elements.style.zIndex = "-999";
   
-}
+// }
 
 function book_name_creater(){
     const book_name_element =  document.createElement("div");
@@ -190,13 +214,13 @@ cancel_btn.addEventListener("click",()=>{
     view_btn.disabled=false;
 })
 reset_btn.addEventListener("click",reset_page);
-add_btn.addEventListener("click",evaluator)
+add_btn.addEventListener("click",libarary.evaluator)
 
 submit_btn.addEventListener("click",function(event){
     event.preventDefault()
 // 
     if (pop_up.checkValidity()) {
-        object_creator();
+        libarary.object_creator();
         add_btn.style.opacity = "100%";
         pop_up.style.opacity="0"
         add_btn.style.zIndex = "9999";
