@@ -194,7 +194,7 @@ add_btn.addEventListener("click",evaluator)
 
 submit_btn.addEventListener("click",function(event){
     event.preventDefault()
-
+// 
     if (pop_up.checkValidity()) {
         object_creator();
         add_btn.style.opacity = "100%";
