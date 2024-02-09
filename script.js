@@ -12,15 +12,7 @@ class libarary {
     container_elements.style.zIndex = "-999";
   
 }
- static object_creator(){
-    let name_value = name_input.value;
-    let author_value= author_input.value;
-    let page_value= page_input.value;
-    let checkbtn_value =   check_btn.checked ? "on" : "off"
-    const newbook= new book(name_value,author_value,page_value,checkbtn_value);
-    console.log(newbook)
-    book_collector.push(newbook)
-}
+
 
 }
 
@@ -220,7 +212,7 @@ submit_btn.addEventListener("click",function(event){
     event.preventDefault()
 // 
     if (pop_up.checkValidity()) {
-        libarary.object_creator();
+        object_creator();
         add_btn.style.opacity = "100%";
         pop_up.style.opacity="0"
         add_btn.style.zIndex = "9999";
