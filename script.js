@@ -220,7 +220,7 @@ submit_btn.addEventListener("click",function(event){
         view_btn.style.zIndex = "9999";
         add_btn.disabled=false;
         view_btn.disabled=false;
-        
+        // 
       } else {
         pop_up.reportValidity();
       }
