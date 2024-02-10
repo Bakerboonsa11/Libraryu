@@ -370,7 +370,7 @@ input[type="search"]:focus{
        
         opacity: 0;
         z-index: -9999;
-        /* box-shadow:  2px 2px 4px 1px rgba(0, 0, 0, 0.5); */
+       
     }
     
     .second_nav{
