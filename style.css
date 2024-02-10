@@ -252,12 +252,26 @@ input[type="search"]:focus{
     color: #EFECEC;
 }
 
-
+.sandwich{
+    font-size: 2.5rem;
+    left: 1rem;
+    position: absolute;
+    top: 1rem;
+    color: #0256c4;
+    opacity: 0;
+}
+.sandwich:hover{
+    font-size: 2.5rem;
+    left: 1rem;
+    position: absolute;
+    top: 1rem;
+    color: #Fff;
+}
 @media screen and (max-width: 600px) {
-    .container nav ul li h2{
-        
-     
-     }
+    .sandwich{
+       
+        opacity: 100%;
+    }
      .container nav ul li{
          position: relative;
          top: 0%;
