@@ -198,12 +198,9 @@ function object_creator(){
     let author_value= author_input.value;
     let page_value= page_input.value;
     let checkbtn_value =   check_btn.checked ? "on" : "off";
-    
     const newbook = new book_genretor(name_value,author_value,page_value,checkbtn_value)
-  
-    console.log(newbook)
      libarary.book_collector.push(newbook)
-     console.log(libarary.book_collector)
+   
 }
 
 view_btn.addEventListener("click",libarary.view_method);
