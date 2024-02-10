@@ -11,6 +11,9 @@ const add_btn = document.querySelector(".btn_add");
  const container_elements = document.querySelector(".accepter")
  const reset_btn = document.querySelector(".reset_btn")
  const accepter= document.querySelector(".accepter")
+ const sandwitch= document.querySelector(".sandwich")
+ const second_navbar = document.querySelector(".second_nav")
+
  
  
         let top_element
@@ -219,4 +222,23 @@ submit_btn.addEventListener("click",function(event){
    
    
 
+})
+sandwitch.addEventListener("click",function(){
+    second_navbar.classList.toggle('animation_class')
+   
+  
+
+    if (second_navbar.classList.contains('animation_class')) {
+        add_btn.style.opacity="0"
+        add_btn.style.disabled=true
+        view_btn.style.opacity="0"
+        view_btn.style.disabled=true
+    } 
+    if(!second_navbar.classList.contains('animation_class')) {
+        add_btn.style.opacity="100%"
+        add_btn.style.disabled=false
+        view_btn.style.opacity="100%"
+        view_btn.style.disabled=false
+    }
+  
 })
