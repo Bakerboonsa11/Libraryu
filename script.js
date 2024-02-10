@@ -71,22 +71,87 @@ class libarary extends book_genretor{
        top_element.classList.add(`cont${counter}`)
        container_elements.appendChild(top_element);
    
-       let book_name_element=  book_name_creater()
+       let book_name_element=  libarary. book_name_creater(b_name)
        top_element.appendChild(book_name_element);
 
-       let book_author_element = author_creator();
+       let book_author_element = libarary.author_creator(b_author);
        top_element.appendChild(book_author_element);
 
-       let book_page_element= page_creator()
+       let book_page_element= libarary.page_creator(b_page)
        top_element.appendChild(book_page_element);
 
-       let button_state= button_state_creator();
+       let button_state= libarary.button_state_creator(b_state);
        top_element.appendChild(button_state);
        
-       let delete_btn_element = delete_btn_creator();
+       let delete_btn_element = libarary.delete_btn_creator();
        top_element.appendChild(delete_btn_element);
        console.log(top_element)
     })              
+}static  book_name_creater(b_name){
+    const book_name_element =  document.createElement("div");
+        book_name_element.classList.add("book_name");
+        book_name_element.textContent = b_name;
+        return book_name_element;
+       
+}static  author_creator(b_author){
+     const book_author_element =  document.createElement("div");
+        book_author_element.classList.add("book_author");
+        book_author_element.textContent =` by : ${b_author} ` ;
+        return book_author_element;
+}
+static page_creator(b_page){
+    const book_page_element =  document.createElement("div");
+        book_page_element.classList.add("book_page");
+        book_page_element.textContent =`Page : ${b_page}` ;
+        return book_page_element;
+}
+static  button_state_creator(b_state){
+
+        const button_state= document.createElement("button");
+        button_state.classList.add("button_delete");
+        button_state.classList.add("button_statescript");
+
+        if(b_state==="on"){
+            button_state.classList.add("state_oppen");
+             button_state.textContent = "Read";
+        }
+        else{
+            button_state.classList.add("state_closed");
+            button_state.textContent = "Not Read";
+        }
+        button_state.addEventListener("click",function(){
+                if( button_state.textContent === "Not Read"){
+                                button_state.classList.add("state_oppen");
+                                button_state.classList.remove("state_closed");
+                                button_state.textContent ="Read"
+                            }
+                            else{
+                                button_state.classList.add("state_closed");
+                                button_state.classList.remove("state_oppen");
+                                button_state.textContent = "Not Read";
+                }
+      });
+        return button_state;
+}
+static delete_btn_creator(){
+        
+        const button_delete_element= document.createElement("button");
+        button_delete_element.classList.add("button_delete");
+        button_delete_element.classList.add("button_delete_unique");
+        button_delete_element.setAttribute("value", counter);
+        button_delete_element.textContent = "Delete";
+        button_delete_element.addEventListener("click", function(){
+                 
+        libarary.book_collector.splice(button_delete_element.value, 1);
+        let box_to_remove = document.querySelector(`.cont${button_delete_element.value}`);
+        console.log(box_to_remove)
+        box_to_remove.remove()
+        // box_to_remove.parentNode.removeChild(box_to_remove);
+            
+        })
+        counter++
+        
+        return button_delete_element;
 }
 
 
@@ -133,74 +198,74 @@ function object_creator(){
   
 // }
 
-function book_name_creater(){
-    const book_name_element =  document.createElement("div");
-        book_name_element.classList.add("book_name");
-        book_name_element.textContent = b_name;
-        return book_name_element;
+// function book_name_creater(){
+//     const book_name_element =  document.createElement("div");
+//         book_name_element.classList.add("book_name");
+//         book_name_element.textContent = b_name;
+//         return book_name_element;
        
-}
-function author_creator(){
-     const book_author_element =  document.createElement("div");
-        book_author_element.classList.add("book_author");
-        book_author_element.textContent =` by : ${b_author} ` ;
-        return book_author_element;
-}
-function page_creator(){
-    const book_page_element =  document.createElement("div");
-        book_page_element.classList.add("book_page");
-        book_page_element.textContent =`Page : ${b_page}` ;
-        return book_page_element;
-}
+// }
+// function author_creator(){
+//      const book_author_element =  document.createElement("div");
+//         book_author_element.classList.add("book_author");
+//         book_author_element.textContent =` by : ${b_author} ` ;
+//         return book_author_element;
+// }
+// function page_creator(){
+//     const book_page_element =  document.createElement("div");
+//         book_page_element.classList.add("book_page");
+//         book_page_element.textContent =`Page : ${b_page}` ;
+//         return book_page_element;
+// }
 
-function button_state_creator(){
+// function button_state_creator(){
 
-        const button_state= document.createElement("button");
-        button_state.classList.add("button_delete");
-        button_state.classList.add("button_statescript");
+//         const button_state= document.createElement("button");
+//         button_state.classList.add("button_delete");
+//         button_state.classList.add("button_statescript");
 
-        if(b_state==="on"){
-            button_state.classList.add("state_oppen");
-             button_state.textContent = "Read";
-        }
-        else{
-            button_state.classList.add("state_closed");
-            button_state.textContent = "Not Read";
-        }
-        button_state.addEventListener("click",function(){
-                if( button_state.textContent === "Not Read"){
-                                button_state.classList.add("state_oppen");
-                                button_state.classList.remove("state_closed");
-                                button_state.textContent ="Read"
-                            }
-                            else{
-                                button_state.classList.add("state_closed");
-                                button_state.classList.remove("state_oppen");
-                                button_state.textContent = "Not Read";
-                }
-      });
-        return button_state;
-}
-function delete_btn_creator(){
+//         if(b_state==="on"){
+//             button_state.classList.add("state_oppen");
+//              button_state.textContent = "Read";
+//         }
+//         else{
+//             button_state.classList.add("state_closed");
+//             button_state.textContent = "Not Read";
+//         }
+//         button_state.addEventListener("click",function(){
+//                 if( button_state.textContent === "Not Read"){
+//                                 button_state.classList.add("state_oppen");
+//                                 button_state.classList.remove("state_closed");
+//                                 button_state.textContent ="Read"
+//                             }
+//                             else{
+//                                 button_state.classList.add("state_closed");
+//                                 button_state.classList.remove("state_oppen");
+//                                 button_state.textContent = "Not Read";
+//                 }
+//       });
+//         return button_state;
+// }
+// function delete_btn_creator(){
         
-        const button_delete_element= document.createElement("button");
-        button_delete_element.classList.add("button_delete");
-        button_delete_element.classList.add("button_delete_unique");
-        button_delete_element.setAttribute("value", counter);
-        button_delete_element.textContent = "Delete";
-        button_delete_element.addEventListener("click", function(){
+//         const button_delete_element= document.createElement("button");
+//         button_delete_element.classList.add("button_delete");
+//         button_delete_element.classList.add("button_delete_unique");
+//         button_delete_element.setAttribute("value", counter);
+//         button_delete_element.textContent = "Delete";
+//         button_delete_element.addEventListener("click", function(){
                  
-        book_collector.splice(button_delete_element.value, 1);
-        let box_to_remove = document.querySelector(`.cont${button_delete_element.value}`);
-        console.log(box_to_remove)
-        box_to_remove.remove()
-        // box_to_remove.parentNode.removeChild(box_to_remove);
+//         book_collector.splice(button_delete_element.value, 1);
+//         let box_to_remove = document.querySelector(`.cont${button_delete_element.value}`);
+//         console.log(box_to_remove)
+//         box_to_remove.remove()
+//         // box_to_remove.parentNode.removeChild(box_to_remove);
             
-        })
-        counter++
+//         })
+//         counter++
         
-        return button_delete_element;
-}
+//         return button_delete_element;
+// }
 function reset_page(){
     add_btn.style.opacity = "0";
     pop_up.style.opacity="100%"
