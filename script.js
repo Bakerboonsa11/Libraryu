@@ -183,15 +183,8 @@ static delete_btn_creator(){
         return button_delete_element;
 }
 
-
-
-
-
 }
 
-
-
-// 
 
 function object_creator(){
     let name_value = name_input.value;
@@ -204,14 +197,9 @@ function object_creator(){
 }
 
 view_btn.addEventListener("click",libarary.view_method);
-
-
-
 cancel_btn.addEventListener("click",book_genretor.cancel)
-
 reset_btn.addEventListener("click",book_genretor.reset_page);
 add_btn.addEventListener("click",libarary.evaluator)
-
 submit_btn.addEventListener("click",function(event){
     event.preventDefault()
 // 
