@@ -191,7 +191,7 @@ static delete_btn_creator(){
 
 
 
-
+// 
 
 function object_creator(){
     let name_value = name_input.value;
