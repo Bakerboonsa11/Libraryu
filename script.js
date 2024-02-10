@@ -61,8 +61,8 @@ const add_btn = document.querySelector(".btn_add");
         view_btn.disabled=false;
     }
 }
-// const obj1 = new book_genretor("kaka","bonsa","page","read")
-// console.log(obj1)
+
+
 
 class libarary extends book_genretor{
   constructor(){
@@ -192,19 +192,7 @@ static delete_btn_creator(){
 
 
 
-// const book_collector = [];
-// let name_value = name_input.value;
-// let author_value= author_input.value;
-// let page_value= page_input.value;
-// let checkbtn_value =   check_btn.checked ? "on" : "off";
-// // const obj = new libarary()
-// console.log(libarary.object_creator(name_value,author_value,page_value,checkbtn_value))
-// function book( name,author, page,read){
-//          this.name=name;
-//          this.author=author;
-//          this.page=page;
-//          this.read=read;
-// }
+
 function object_creator(){
     let name_value = name_input.value;
     let author_value= author_input.value;
