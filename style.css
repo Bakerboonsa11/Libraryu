@@ -15,6 +15,7 @@
     position: relative;
     background-color:#EFECEC;
     margin: 0 auto;
+    overflow-x: hidden;
    
 }
 .reset_btn{
@@ -119,35 +120,39 @@ input[type="search"]:focus{
     color: #FC6736;
   
 }
-.btn_add{
+.btn_container{
     position: absolute;
     top: 50%;
     left: 40%;
-    transform: translate(-50%,-50%);
+    gap: 4rem;
+    /* transform: translate(-50%,-50%); */
+}
+.btn_add{
+    /* position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%,-50%); */
     width: 8rem;
     height: 2rem;
     border-radius: 7px;
     background-color: #FC6736;
     color: #FFF;
     font-weight: 900;
-    /* opacity: 0; */
+ 
 }
 .btn_add_unique:hover{
   
     background-color: #FFF;
     color: #FC6736;
   
-    /* opacity: 0; */
+  
 }
 .View_btn:hover{
     background-color: #FFF;
     color: #FC6736;
 }
 .View_btn{
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    transform: translate(-50%,-50%);
+  
     width: 8rem;
     height: 2rem;
     border-radius: 7px;
