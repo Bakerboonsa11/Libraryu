@@ -321,7 +321,7 @@ input[type="search"]:focus{
     0% {
       opacity: 0;
       transform: translateY(-100%);
-      /* background-color: #Fff; */
+      
      
     }
    
