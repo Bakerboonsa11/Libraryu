@@ -317,58 +317,11 @@ function object_creator(){
      
 // }
 view_btn.addEventListener("click",libarary.view_method);
-// view_btn.addEventListener("click",function(event){
-//      container_elements.style.opacity="100%"
-//      container_elements.style.zIndex = "9999";
-//      add_btn.style.opacity="0"
-//      reset_btn.style.opacity="100%"
-//      reset_btn.style.zIndex="9999"
-//      view_btn.style.opacity="0"
-//      add_btn.disabled=true;
-//      view_btn.disabled=true;
 
-//      book_collector.forEach(function(book){
-//          b_name = book.name;
-//          b_author= book.author;
-//          b_page=book.page
-//          b_state= book.read;
-        
-//         top_element =  document.createElement("div");
-//         top_element.classList.add("book_container");
-//         top_element.classList.add(`cont${counter}`)
-//         container_elements.appendChild(top_element);
-    
-//         let book_name_element=  book_name_creater()
-//         top_element.appendChild(book_name_element);
-
-//         let book_author_element = author_creator();
-//         top_element.appendChild(book_author_element);
-
-//         let book_page_element= page_creator()
-//         top_element.appendChild(book_page_element);
-
-//         let button_state= button_state_creator();
-//         top_element.appendChild(button_state);
-        
-//         let delete_btn_element = delete_btn_creator();
-//         top_element.appendChild(delete_btn_element);
-//         console.log(top_element)
-//      })
-   
-// }
 
 
 cancel_btn.addEventListener("click",book_genretor.cancel)
-// cancel_btn.addEventListener("click",()=>{
-//     pop_up.style.opacity="0"
-//     pop_up.style.zIndex = "-9999";
-//     add_btn.style.opacity = "100%";
-//     view_btn.style.opacity="100%" 
-//     add_btn.style.zIndex = "9999";
-//     view_btn.style.zIndex = "9999";
-//     add_btn.disabled=false;
-//     view_btn.disabled=false;
-// })
+
 reset_btn.addEventListener("click",book_genretor.reset_page);
 add_btn.addEventListener("click",libarary.evaluator)
 
