@@ -1,21 +1,3 @@
-class libarary {
-  constructor(){
-    
-  }
-  static evaluator(){
-    add_btn.style.opacity = "0";
-    pop_up.style.opacity="100%"
-    pop_up.style.zIndex = "9999";
-    add_btn.style.zIndex = "-9999";
-    view_btn.style.zIndex = "-9999";
-    view_btn.style.opacity="0"  
-    container_elements.style.zIndex = "-999";
-  
-}
-
-
-}
-
 "use strict"
 const add_btn = document.querySelector(".btn_add");
  const pop_up = document.querySelector(".pop_up");
@@ -39,21 +21,106 @@ const add_btn = document.querySelector(".btn_add");
         let on_off_btn; 
         let counter =0;
 
-const book_collector = [];
-function book( name,author, page,read){
-         this.name=name;
-         this.author=author;
-         this.page=page;
-         this.read=read;
+
+
+ class book_genretor{
+    constructor(name ,author,page,read){
+        this.name= name
+        this.author = author
+        this.page = page
+        this.read = read
+    }
+    static book_collector = [];
 }
+// const obj1 = new book_genretor("kaka","bonsa","page","read")
+// console.log(obj1)
+
+class libarary extends book_genretor{
+  constructor(){
+     super()
+  }
+
+  static evaluator(){
+    add_btn.style.opacity = "0";
+    pop_up.style.opacity="100%"
+    pop_up.style.zIndex = "9999";
+    add_btn.style.zIndex = "-9999";
+    view_btn.style.zIndex = "-9999";
+    view_btn.style.opacity="0"  
+    container_elements.style.zIndex = "-999";
+  
+}
+ static view_method(){
+    container_elements.style.opacity="100%"
+    container_elements.style.zIndex = "9999";
+    add_btn.style.opacity="0"
+    reset_btn.style.opacity="100%"
+    reset_btn.style.zIndex="9999"
+    view_btn.style.opacity="0"
+    add_btn.disabled=true;
+    view_btn.disabled=true;
+
+   libarary. book_collector.forEach(function(book){
+        b_name = book.name;
+        b_author= book.author;
+        b_page=book.page
+        b_state= book.read;
+       
+       top_element =  document.createElement("div");
+       top_element.classList.add("book_container");
+       top_element.classList.add(`cont${counter}`)
+       container_elements.appendChild(top_element);
+   
+       let book_name_element=  book_name_creater()
+       top_element.appendChild(book_name_element);
+
+       let book_author_element = author_creator();
+       top_element.appendChild(book_author_element);
+
+       let book_page_element= page_creator()
+       top_element.appendChild(book_page_element);
+
+       let button_state= button_state_creator();
+       top_element.appendChild(button_state);
+       
+       let delete_btn_element = delete_btn_creator();
+       top_element.appendChild(delete_btn_element);
+       console.log(top_element)
+    })              
+}
+
+
+
+
+}
+
+
+
+
+// const book_collector = [];
+// let name_value = name_input.value;
+// let author_value= author_input.value;
+// let page_value= page_input.value;
+// let checkbtn_value =   check_btn.checked ? "on" : "off";
+// // const obj = new libarary()
+// console.log(libarary.object_creator(name_value,author_value,page_value,checkbtn_value))
+// function book( name,author, page,read){
+//          this.name=name;
+//          this.author=author;
+//          this.page=page;
+//          this.read=read;
+// }
 function object_creator(){
     let name_value = name_input.value;
     let author_value= author_input.value;
     let page_value= page_input.value;
-    let checkbtn_value =   check_btn.checked ? "on" : "off"
-    const newbook= new book(name_value,author_value,page_value,checkbtn_value);
+    let checkbtn_value =   check_btn.checked ? "on" : "off";
+    
+    const newbook = new book_genretor(name_value,author_value,page_value,checkbtn_value)
+  
     console.log(newbook)
-    book_collector.push(newbook)
+     libarary.book_collector.push(newbook)
+     console.log(libarary.book_collector)
 }
 // function evaluator(){
 //     add_btn.style.opacity = "0";
@@ -154,45 +221,47 @@ function reset_page(){
     }
      
 }
-view_btn.addEventListener("click",function(event){
-     container_elements.style.opacity="100%"
-     container_elements.style.zIndex = "9999";
-     add_btn.style.opacity="0"
-     reset_btn.style.opacity="100%"
-     reset_btn.style.zIndex="9999"
-     view_btn.style.opacity="0"
-     add_btn.disabled=true;
-     view_btn.disabled=true;
+view_btn.addEventListener("click",libarary.view_method);
+// view_btn.addEventListener("click",function(event){
+//      container_elements.style.opacity="100%"
+//      container_elements.style.zIndex = "9999";
+//      add_btn.style.opacity="0"
+//      reset_btn.style.opacity="100%"
+//      reset_btn.style.zIndex="9999"
+//      view_btn.style.opacity="0"
+//      add_btn.disabled=true;
+//      view_btn.disabled=true;
 
-     book_collector.forEach(function(book){
-         b_name = book.name;
-         b_author= book.author;
-         b_page=book.page
-         b_state= book.read;
+//      book_collector.forEach(function(book){
+//          b_name = book.name;
+//          b_author= book.author;
+//          b_page=book.page
+//          b_state= book.read;
         
-        top_element =  document.createElement("div");
-        top_element.classList.add("book_container");
-        top_element.classList.add(`cont${counter}`)
-        container_elements.appendChild(top_element);
+//         top_element =  document.createElement("div");
+//         top_element.classList.add("book_container");
+//         top_element.classList.add(`cont${counter}`)
+//         container_elements.appendChild(top_element);
     
-        let book_name_element=  book_name_creater()
-        top_element.appendChild(book_name_element);
+//         let book_name_element=  book_name_creater()
+//         top_element.appendChild(book_name_element);
 
-        let book_author_element = author_creator();
-        top_element.appendChild(book_author_element);
+//         let book_author_element = author_creator();
+//         top_element.appendChild(book_author_element);
 
-        let book_page_element= page_creator()
-        top_element.appendChild(book_page_element);
+//         let book_page_element= page_creator()
+//         top_element.appendChild(book_page_element);
 
-        let button_state= button_state_creator();
-        top_element.appendChild(button_state);
+//         let button_state= button_state_creator();
+//         top_element.appendChild(button_state);
         
-        let delete_btn_element = delete_btn_creator();
-        top_element.appendChild(delete_btn_element);
-        console.log(top_element)
-     })
+//         let delete_btn_element = delete_btn_creator();
+//         top_element.appendChild(delete_btn_element);
+//         console.log(top_element)
+//      })
    
-});
+// }
+
 
 
 cancel_btn.addEventListener("click",()=>{
