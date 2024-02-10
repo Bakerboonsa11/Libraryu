@@ -31,8 +31,34 @@ const add_btn = document.querySelector(".btn_add");
         this.read = read
     }
     static book_collector = [];
-    reset_page(){
-        
+    static reset_page(){
+        add_btn.style.opacity = "0";
+        pop_up.style.opacity="100%"
+        pop_up.style.zIndex = "9999";
+        add_btn.style.zIndex = "-9999";
+        view_btn.style.opacity="0"
+        view_btn.style.zIndex = "-9999";
+        // container_elements.style.opacity="0%"
+        // container_elements.style.zIndex = "-9999";
+        accepter.style.opacity="0"
+        accepter.style.zIndex = "-9999";
+        add_btn.disabled=true;
+         view_btn.disabled=true;
+        while(top_element.firstChild){
+            top_element.removeChild(top_element.firstChild);
+            console.log(`the top element is ${top_element}`)
+            container_elements.removeChild(container_elements.firstChild)
+        }
+    }
+    static cancel(){
+        pop_up.style.opacity="0"
+        pop_up.style.zIndex = "-9999";
+        add_btn.style.opacity = "100%";
+        view_btn.style.opacity="100%" 
+        add_btn.style.zIndex = "9999";
+        view_btn.style.zIndex = "9999";
+        add_btn.disabled=false;
+        view_btn.disabled=false;
     }
 }
 // const obj1 = new book_genretor("kaka","bonsa","page","read")
@@ -156,16 +182,7 @@ static delete_btn_creator(){
         
         return button_delete_element;
 }
- static cancel(){
-    pop_up.style.opacity="0"
-    pop_up.style.zIndex = "-9999";
-    add_btn.style.opacity = "100%";
-    view_btn.style.opacity="100%" 
-    add_btn.style.zIndex = "9999";
-    view_btn.style.zIndex = "9999";
-    add_btn.disabled=false;
-    view_btn.disabled=false;
-}
+
 
 
 
@@ -279,26 +296,26 @@ function object_creator(){
         
 //         return button_delete_element;
 // }
-function reset_page(){
-    add_btn.style.opacity = "0";
-    pop_up.style.opacity="100%"
-    pop_up.style.zIndex = "9999";
-    add_btn.style.zIndex = "-9999";
-    view_btn.style.opacity="0"
-    view_btn.style.zIndex = "-9999";
-    // container_elements.style.opacity="0%"
-    // container_elements.style.zIndex = "-9999";
-    accepter.style.opacity="0"
-    accepter.style.zIndex = "-9999";
-    add_btn.disabled=true;
-     view_btn.disabled=true;
-    while(top_element.firstChild){
-        top_element.removeChild(top_element.firstChild);
-        console.log(`the top element is ${top_element}`)
-        container_elements.removeChild(container_elements.firstChild)
-    }
+// function reset_page(){
+//     add_btn.style.opacity = "0";
+//     pop_up.style.opacity="100%"
+//     pop_up.style.zIndex = "9999";
+//     add_btn.style.zIndex = "-9999";
+//     view_btn.style.opacity="0"
+//     view_btn.style.zIndex = "-9999";
+//     // container_elements.style.opacity="0%"
+//     // container_elements.style.zIndex = "-9999";
+//     accepter.style.opacity="0"
+//     accepter.style.zIndex = "-9999";
+//     add_btn.disabled=true;
+//      view_btn.disabled=true;
+//     while(top_element.firstChild){
+//         top_element.removeChild(top_element.firstChild);
+//         console.log(`the top element is ${top_element}`)
+//         container_elements.removeChild(container_elements.firstChild)
+//     }
      
-}
+// }
 view_btn.addEventListener("click",libarary.view_method);
 // view_btn.addEventListener("click",function(event){
 //      container_elements.style.opacity="100%"
@@ -341,7 +358,7 @@ view_btn.addEventListener("click",libarary.view_method);
 // }
 
 
-cancel_btn.addEventListener("click",libarary.cancel)
+cancel_btn.addEventListener("click",book_genretor.cancel)
 // cancel_btn.addEventListener("click",()=>{
 //     pop_up.style.opacity="0"
 //     pop_up.style.zIndex = "-9999";
@@ -352,7 +369,7 @@ cancel_btn.addEventListener("click",libarary.cancel)
 //     add_btn.disabled=false;
 //     view_btn.disabled=false;
 // })
-reset_btn.addEventListener("click",reset_page);
+reset_btn.addEventListener("click",book_genretor.reset_page);
 add_btn.addEventListener("click",libarary.evaluator)
 
 submit_btn.addEventListener("click",function(event){
