@@ -122,9 +122,11 @@ input[type="search"]:focus{
 }
 .btn_container{
     position: absolute;
-    top: 50%;
-    left: 40%;
+    top: 20%;
+    left: 20%;
     gap: 4rem;
+    display: flex;
+    flex-direction: column;
     /* transform: translate(-50%,-50%); */
 }
 .btn_add{
@@ -248,4 +250,37 @@ input[type="search"]:focus{
 .button_delete_unique:hover{
     background-color:transparent;
     color: #EFECEC;
+}
+
+
+@media screen and (max-width: 600px) {
+    .container nav ul li h2{
+        
+     
+     }
+     .container nav ul li{
+         position: relative;
+         top: 0%;
+         left: 25%;
+      }
+     .op{
+      opacity: 0;
+     }
+     input[type="search"]{
+       width: 7rem;
+    }
+   
+    .accepter{
+        /* background-color: brown; */
+        width: 80%;
+        /* max-width: 90rem; */
+      
+        height: 30rem;
+        position: absolute;
+        top: 7rem;
+        left: 3rem;
+       
+    } 
+    
+
 }
