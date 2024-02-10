@@ -31,6 +31,9 @@ const add_btn = document.querySelector(".btn_add");
         this.read = read
     }
     static book_collector = [];
+    reset_page(){
+        
+    }
 }
 // const obj1 = new book_genretor("kaka","bonsa","page","read")
 // console.log(obj1)
@@ -152,6 +155,16 @@ static delete_btn_creator(){
         counter++
         
         return button_delete_element;
+}
+ static cancel(){
+    pop_up.style.opacity="0"
+    pop_up.style.zIndex = "-9999";
+    add_btn.style.opacity = "100%";
+    view_btn.style.opacity="100%" 
+    add_btn.style.zIndex = "9999";
+    view_btn.style.zIndex = "9999";
+    add_btn.disabled=false;
+    view_btn.disabled=false;
 }
 
 
@@ -328,17 +341,17 @@ view_btn.addEventListener("click",libarary.view_method);
 // }
 
 
-
-cancel_btn.addEventListener("click",()=>{
-    pop_up.style.opacity="0"
-    pop_up.style.zIndex = "-9999";
-    add_btn.style.opacity = "100%";
-    view_btn.style.opacity="100%" 
-    add_btn.style.zIndex = "9999";
-    view_btn.style.zIndex = "9999";
-    add_btn.disabled=false;
-    view_btn.disabled=false;
-})
+cancel_btn.addEventListener("click",libarary.cancel)
+// cancel_btn.addEventListener("click",()=>{
+//     pop_up.style.opacity="0"
+//     pop_up.style.zIndex = "-9999";
+//     add_btn.style.opacity = "100%";
+//     view_btn.style.opacity="100%" 
+//     add_btn.style.zIndex = "9999";
+//     view_btn.style.zIndex = "9999";
+//     add_btn.disabled=false;
+//     view_btn.disabled=false;
+// })
 reset_btn.addEventListener("click",reset_page);
 add_btn.addEventListener("click",libarary.evaluator)
 
